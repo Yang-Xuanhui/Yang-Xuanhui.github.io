@@ -1,0 +1,5 @@
+# Hugo Site - Ignore files
+resources/
+public/
+.env
+.DS_Store

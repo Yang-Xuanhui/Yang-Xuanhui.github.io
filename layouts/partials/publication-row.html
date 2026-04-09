@@ -1,0 +1,50 @@
+<div class="publication-row">
+    <div class="publication-image-wrap">
+        {{ $imagePath := .teaser | default (.image | default "images/teaser-placeholder.svg") }}
+        <img src="{{ $imagePath | relURL }}" alt="Teaser for {{ .title }}" class="publication-image">
+    </div>
+    <div class="publication-body">
+        {{ with .award }}
+        {{ $awardLower := lower . }}
+        <p>
+            <span class="award-badge{{ if in $awardLower "best paper" }} award-badge-best{{ else if or (in $awardLower "honorable mention") (in $awardLower "honerable mention") }} award-badge-honorable{{ end }}">{{ if in $awardLower "best paper" }}🏆{{ else if or (in $awardLower "honorable mention") (in $awardLower "honerable mention") }}⭐️{{ else }}🍀{{ end }} {{ . }}</span>
+        </p>
+        {{ end }}
+        {{ with .content_markdown }}
+        <div class="publication-markdown">{{ . | markdownify }}</div>
+        {{ else }}
+        {{ with .title }}<p><strong>{{ . }}</strong></p>{{ end }}
+        {{ with .citation_text }}<p class="citation-text">{{ . }}</p>{{ end }}
+        {{ with .summary }}<p>{{ . }}</p>{{ end }}
+        {{ end }}
+        
+
+        <div class="publication-resources">
+            {{ with .pdf }}
+            <a class="resource-link" href="{{ . | relURL }}" target="_blank" rel="noopener">PDF</a>
+            {{ end }}
+            {{ with .video }}
+            <a class="resource-link" href="{{ . }}" target="_blank" rel="noopener">Video</a>
+            {{ end }}
+            {{ with .code }}
+            <a class="resource-link" href="{{ . }}" target="_blank" rel="noopener">Code</a>
+            {{ end }}
+            {{ with .project }}
+            <a class="resource-link" href="{{ . }}" target="_blank" rel="noopener">Project</a>
+            {{ end }}
+            {{ with .slides }}
+            <a class="resource-link" href="{{ . }}" target="_blank" rel="noopener">Slides</a>
+            {{ end }}
+            {{ with .demo }}
+            <a class="resource-link" href="{{ . }}" target="_blank" rel="noopener">Demo</a>
+            {{ end }}
+            {{ with .resources }}
+            {{ range . }}
+            {{ if and .label .url }}
+            <a class="resource-link" href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>
+            {{ end }}
+            {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</div>

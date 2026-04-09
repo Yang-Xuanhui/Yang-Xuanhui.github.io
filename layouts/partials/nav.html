@@ -1,0 +1,8 @@
+<nav>
+    <div class="nav-inner">
+        {{ range .Site.Menus.main }}
+        {{ $menuURL := .URL }}
+        <a href="{{ if hasPrefix $menuURL "#" }}{{ "/" | relLangURL }}{{ $menuURL }}{{ else }}{{ $menuURL | relURL }}{{ end }}">{{ .Name }}</a>
+        {{ end }}
+    </div>
+</nav>

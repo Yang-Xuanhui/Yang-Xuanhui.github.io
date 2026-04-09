@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{ partial "head.html" . }}
+</head>
+<body>
+    {{ partial "nav.html" . }}
+
+    {{ $aboutMenu := where .Site.Menus.main "URL" "#about" }}
+    {{ $publicationsMenu := where .Site.Menus.main "URL" "#publications" }}
+    {{ $servicesMenu := where .Site.Menus.main "URL" "#services" }}
+    {{ $awardsMenu := where .Site.Menus.main "URL" "#awards" }}
+
+    <div class="page-shell">
+        {{ partial "sidebar.html" . }}
+
+        <main class="main-content">
+            <article class="content-card" id="about">
+                <h2>{{ if gt (len $aboutMenu) 0 }}{{ (index $aboutMenu 0).Name }}{{ else }}About{{ end }}</h2>
+                {{ with .Site.Params.bio }}
+                <p class="lead">{{ . }}</p>
+                {{ end }}
+                {{ .Content }}
+            </article>
+
+            <article class="content-card" id="publications">
+                <h2>{{ if gt (len $publicationsMenu) 0 }}{{ (index $publicationsMenu 0).Name }}{{ else }}Publications{{ end }}</h2>
+                <div class="publication-list">
+                    {{ with .Site.GetPage "section" "publications" }}
+                    {{ range where .Params.publications "selected" true }}
+                    {{ partial "publication-row.html" . }}
+                    {{ end }}
+                    {{ end }}
+                </div>
+                <!-- <p class="more-link"><a href="/publications/">View Full Publication List</a></p> -->
+            </article>
+
+            <!-- <article class="content-card" id="services">
+                <h2>{{ if gt (len $servicesMenu) 0 }}{{ (index $servicesMenu 0).Name }}{{ else }}Services{{ end }}</h2>
+                {{ with .Site.GetPage "section" "services" }}
+                {{ .Content }}
+                {{ end }}
+            </article> -->
+
+            <!-- <article class="content-card" id="awards">
+                <h2>{{ if gt (len $awardsMenu) 0 }}{{ (index $awardsMenu 0).Name }}{{ else }}Awards{{ end }}</h2>
+                {{ with .Site.GetPage "section" "awards" }}
+                {{ .Content }}
+                {{ end }}
+            </article> -->
+        </main>
+    </div>
+
+    {{ partial "footer.html" . }}
+</body>
+</html>
