@@ -22,6 +22,11 @@ weight = 2
 
 
 [[params.academicLinks]]
+label = "Email"
+url = "mailto:xyangcx@connect.ust.hk"
+title = "Email"
+
+[[params.academicLinks]]
 label = "Google Scholar"
 url = "https://scholar.google.com/citations?user=UnI1jIsAAAAJ"
 title = "Google Scholar"
