@@ -5,7 +5,7 @@ publications:
     award: "Honorable Mention"
     content_markdown: |
       **Xuanhui Yang**, Xuning Hu, Hai-Ning Liang, and Xiaojuan Ma. 2026.
-      **Investigating How Physical Surfaces Can Serve as Common-Region Cues for Perceptual Grouping of Virtual Elements in Augmented Reality**.
+      **[Investigating How Physical Surfaces Can Serve as Common-Region Cues for Perceptual Grouping of Virtual Elements in Augmented Reality](https://doi.org/10.1145/3772318.3790315)**.
       In *Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems* (CHI ’26).
     teaser: "images/PerceptualGroupingAR.png"
     pdf: "pdf/chi26.pdf"
