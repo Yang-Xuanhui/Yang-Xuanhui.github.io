@@ -31,3 +31,8 @@ label = "Google Scholar"
 url = "https://scholar.google.com/citations?user=UnI1jIsAAAAJ"
 title = "Google Scholar"
 
+
+[[menu.main]]
+name = "Service"
+url = "#services"
+weight = 3

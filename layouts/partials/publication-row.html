@@ -7,7 +7,7 @@
         {{ with .award }}
         {{ $awardLower := lower . }}
         <p>
-            <span class="award-badge{{ if in $awardLower "best paper" }} award-badge-best{{ else if or (in $awardLower "honorable mention") (in $awardLower "honerable mention") }} award-badge-honorable{{ end }}">{{ if in $awardLower "best paper" }}🏆{{ else if or (in $awardLower "honorable mention") (in $awardLower "honerable mention") }}⭐️{{ else }}🍀{{ end }} {{ . }}</span>
+            <span class="award-badge{{ if in $awardLower "best paper" }} award-badge-best{{ else if or (in $awardLower "honorable mention") (in $awardLower "honerable mention") }} award-badge-honorable{{ end }}">{{ . }}</span>
         </p>
         {{ end }}
         {{ with .content_markdown }}

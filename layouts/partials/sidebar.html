@@ -9,7 +9,9 @@
         <h2>{{ .Site.Params.author }}</h2>
         <p class="muted">{{ .Site.Params.position }}</p>
         <p class="muted">{{ .Site.Params.institution }}</p>
-        <a class="email-link" href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+        {{ with .Site.Params.email }}
+        <a class="email-link" href="mailto:{{ . }}">{{ . }}</a>
+        {{ end }}
 
         <div class="icon-links" aria-label="Academic links">
             {{ range .Site.Params.academicLinks }}

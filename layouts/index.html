@@ -35,12 +35,12 @@
                 <!-- <p class="more-link"><a href="/publications/">View Full Publication List</a></p> -->
             </article>
 
-            <!-- <article class="content-card" id="services">
-                <h2>{{ if gt (len $servicesMenu) 0 }}{{ (index $servicesMenu 0).Name }}{{ else }}Services{{ end }}</h2>
+            <section class="content-card" id="services" aria-labelledby="services-title">
+                <h2 id="services-title">Service</h2>
                 {{ with .Site.GetPage "section" "services" }}
                 {{ .Content }}
                 {{ end }}
-            </article> -->
+            </section>
 
             <!-- <article class="content-card" id="awards">
                 <h2>{{ if gt (len $awardsMenu) 0 }}{{ (index $awardsMenu 0).Name }}{{ else }}Awards{{ end }}</h2>
