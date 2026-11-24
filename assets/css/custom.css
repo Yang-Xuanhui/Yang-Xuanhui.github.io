@@ -40,13 +40,17 @@ nav { position: sticky; top: 0; z-index: 20; background: var(--bg-main); }
 .publication-row { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 1.4rem; align-items: start; }
 .publication-image { display: block; width: 100%; height: 125px; object-fit: contain; border-radius: 6px; background: var(--bg-soft); }
 .publication-body { min-width: 0; }
-.publication-body p, .publication-markdown p { margin: 0 0 0.5rem; }
-.publication-markdown { line-height: 1.6; }
-.publication-markdown a { font-weight: 600; }
-.publication-body h3 { margin: 0 0 0.5rem; font-size: 1rem; }
-.award-badge { display: inline-block; color: var(--accent-strong); background: var(--bg-soft); border-radius: 4px; padding: 0.12rem 0.55rem; font-size: 0.9rem; font-weight: 600; }
-.publication-resources { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.65rem; }
-.resource-link { font-weight: 600; }
+.publication-body p { margin: 0 0 0.5rem; }
+.publication-body .publication-title { margin: 0 0 0.65rem; font-size: 1.15rem; font-weight: 600; line-height: 1.4; color: var(--text-main); }
+.publication-authors { line-height: 1.6; }
+.publication-venue { color: var(--text-muted); line-height: 1.5; }
+.award-badge { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--accent-strong); font-size: 0.9rem; font-weight: 600; }
+.award-badge svg { width: 17px; height: 17px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linejoin: round; }
+h1, h2, h3, strong { font-weight: 600; }
+.publication-resources { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.8rem; }
+.resource-link { display: inline-flex; align-items: center; justify-content: center; min-height: 34px; padding: 0.2rem 0.7rem; border: 1px solid var(--border); border-radius: 6px; background: var(--bg-soft); color: var(--accent-strong); font-size: 0.9rem; font-weight: 500; line-height: 1.5; transition: background-color 120ms, border-color 120ms; }
+.resource-link:hover { background: #e8efe9; border-color: #b6c9bc; text-decoration: none; }
+.resource-link:active { background: #dce8df; }
 #services h3 { margin: 1.5rem 0 0.65rem; font-size: 1.05rem; font-weight: 600; }
 #services h3:first-of-type { margin-top: 0; }
 #services ul { margin: 0; padding-left: 1.2rem; }
